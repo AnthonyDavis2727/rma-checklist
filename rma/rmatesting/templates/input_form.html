@@ -1,16 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>Input Form</title>
 </head>
 <body>
-    <h1>Input Form</h1>
-    <form method="post">
+    <form method="POST">
         {% csrf_token %}
-        <label for="inputField">Enter something:</label>
-        <input type="text" id="inputField" name="inputField" required>
+        <h1>RMA Testing Form</h1>
+        
+        <div class="form-section">
+            <h2>Inspector Information</h2>
+
+            <div class="section-layout">
+                <div>
+                    {{ form.inspector.label_tag}}
+                    {{ form.inspector }}
+                </div>
+                <div>
+                    {{ form.date.label_tag}}
+                    {{ form.date }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>RMA Info</h2>
+
+            <div class="section-layout">
+                <div>
+                    {{ form.ticket_number.label_tag}}
+                    {{ form.ticket_number }}
+                </div>
+                <div>
+                    {{ form.rma_number.label_tag}}
+                    {{ form.rma_number }}
+                </div>
+                <div>
+                    {{ form.serial_number.label_tag}}
+                    {{ form.serial_number }}
+                </div>
+            </div>
+        </div>
+
         <button type="submit">Submit</button>
     </form>
 </body>
