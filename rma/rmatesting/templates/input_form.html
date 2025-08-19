@@ -15,7 +15,7 @@
         <div class="form-section">
             <h2>Inspector Information</h2>
 
-            <div class="section-layout">
+            <div class="section-layout-row">
                 <div>
                     {{ form.inspector.label_tag}}
                     {{ form.inspector }}
@@ -30,7 +30,7 @@
         <div class="form-section">
             <h2>RMA Info</h2>
 
-            <div class="section-layout">
+            <div class="section-layout-row">
                 <div>
                     {{ form.ticket_number.label_tag}}
                     {{ form.ticket_number }}
@@ -42,6 +42,28 @@
                 <div>
                     {{ form.serial_number.label_tag}}
                     {{ form.serial_number }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>RMA Inspections</h2>
+            <h3>Visual Inspection</h3>
+
+            <div class="section-layout-column">
+                <div style="display: flex; flex-direction: row; justify-content: center; gap: 25px;">
+                    <div>
+                        {{ form.screen_condition.label_tag}}
+                        {{ form.screen_condition }}
+                    </div>
+                    <div>
+                        {{ form.mount_condition.label_tag}}
+                        {{ form.mount_condition }}
+                    </div>
+                </div>
+                <div>
+                    {{ form.other.label_tag}}
+                    {{ form.other }}
                 </div>
             </div>
         </div>

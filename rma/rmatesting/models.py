@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinLengthValidator
 
 class RmaRecords(models.Model):
 
@@ -7,9 +8,9 @@ class RmaRecords(models.Model):
     date = models.DateField(null=False, blank=False)
 
     # RMA Identification
-    ticket_number = models.IntegerField(null=False, blank=False)
-    rma_number = models.IntegerField(null=False, blank=False)
-    serial_number = models.IntegerField(null=False, blank=False)
+    ticket_number = models.CharField(max_length=100, null=False, blank=False)
+    rma_number = models.CharField(max_length=100, null=False, blank=False)
+    serial_number = models.CharField(max_length=12, null=False, blank=False, validators=[MinLengthValidator(8)])
 
     ###### RMA Inspections ######
 
