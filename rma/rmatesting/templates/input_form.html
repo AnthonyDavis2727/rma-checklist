@@ -13,7 +13,7 @@
         <h1>RMA Testing Form</h1>
         
         <div class="form-section">
-            <h2>Inspector Information</h2>
+            <h2>Inspector Info</h2>
 
             <div class="section-layout-row">
                 <div>
@@ -48,8 +48,8 @@
 
         <div class="form-section">
             <h2>RMA Inspections</h2>
-            <h3>Visual Inspection</h3>
 
+            <h3>Visual Inspection</h3>
             <div class="section-layout-column">
                 <div style="display: flex; flex-direction: row; justify-content: center; gap: 25px;">
                     <div>
@@ -64,6 +64,33 @@
                 <div>
                     {{ form.other.label_tag}}
                     {{ form.other }}
+                </div>
+            </div>
+            <hr style="margin: auto; margin-top: 20px; width: 80%">
+
+            <h3>Initial Boot</h3>
+            <div class="section-layout-column">
+                <div style="display: flex; flex-direction: row; justify-content: center; gap: 25px;">
+                    <div>
+                        {{ form.powers_on.label_tag }}
+                        {{ form.powers_on }}
+                        {{ form.qr_code.label_tag }}
+                        {{ form.qr_code }}
+                        {{ form.matching_serial.label_tag }}
+                        {{ form.matching_serial }}
+                    </div>
+                    <div>
+                        {{ form.serial_is_unique.label_tag }}
+                        {{ form.serial_is_unique }}
+                        {{ form.can_be_registered.label_tag }}
+                        {{ form.can_be_registered }}
+                        {{ form.stays_registered.label_tag }}
+                        {{ form.stays_registered }}
+                    </div>
+                    <div>
+                        {{ form.logs.label_tag }}
+                        {{ form.logs }}
+                    </div>
                 </div>
             </div>
         </div>
